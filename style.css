@@ -9,3 +9,195 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  ryuki
 */
+
+body.home #masthead hgroup {
+	display: none;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+body.home #masthead {
+	border-bottom: none;
+	margin-bottom: -20px;
+}
+
+#sidebar-home {
+	margin-left: 35px;
+	float: left;
+	position: relative;
+}
+
+#sidebar-home:after {
+	content: " ";
+	visibility: hidden;
+	clear: both;
+	font-size: 0;
+	height: 0;
+	display: block;
+}
+
+#sidebar-home {
+	width: 290px;
+}
+
+#sidebar-home * {
+	color: #000;
+}
+
+#sidebar-home .site-description {
+	line-height: 1.5;
+}
+
+.entry-meta.widget-area {
+	text-transform: none;
+}
+
+#sidebar-home .widget {
+	margin-bottom: 0;
+}
+
+#sidebar-home .widget input {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	color: rgb(0, 0, 0, .1);
+}
+
+#sidebar-home .widget input[type="submit"] {
+	color: #fff;
+}
+
+#sidebar-home .widget input[type="submit"]:hover {
+	color: #000;
+}
+
+
+.entry-meta.widget-area aside, #sidebar-home .widget-title {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.entry-meta .site-title, .entry-meta .site-description {
+	text-align: left;
+}
+
+#sidebar-home hgroup, #sidebar-home aside {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	display: block;
+	padding: 8px 0;
+}
+
+#sidebar-home aside:last-child {
+	border-bottom: none;
+}
+
+.homepage-post * {
+	clear: none;
+}
+
+.homepage-post .hentry {
+	padding: 35px 0 0;
+}
+
+.homepage-post .entry-summary {
+	max-width: 896px;
+}
+
+.homepage-post .entry-summary {
+	margin-top: 16px;
+}
+
+.home #featured-categories {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.home #featured-categories > div {
+	width: 33%;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px 35px 35px;
+}
+
+.home #featured-categories > div {
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.home #featured-categories > div:last-child {
+	border-right: none;
+}
+
+.home #featured-categories:after {
+	content: " ";
+	visibility: hidden;
+	clear: both;
+	font-size: 0;
+	height: 0;
+	display: block;
+}
+
+#featured-categories span.category-name {
+	display: inline-block;
+	background-color: #000;
+	text-transform: uppercase;
+	font: 700 12px/1 Lato, sans-serif;
+	letter-spacing: 0.1em;
+	padding: 10px 22px;
+	position: relative;
+	top: -15px;
+}
+
+#featured-categories span.category-name a {
+	color: #fff;
+}
+
+.featured-on-homepage:after {
+	content: " ";
+	visibility: hidden;
+	clear: both;
+	font-size: 0;
+	height: 0;
+	display: block;
+}
+
+.featured-on-homepage.hentry {
+	padding: 0 0 10px;
+	border-bottom: none;
+}
+
+.featured-on-homepage.hentry:last-child {
+	padding-bottom: 0;
+}
+
+.featured-on-homepage a {
+	text-decoration: underline;
+}
+
+.featured-on-homepage img {
+	max-height: 70px;
+	max-width: 120px;
+	height: auto;
+	width: auto;
+	float: left;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+	body.home #masthead hgroup {
+		display: block;
+	}
+	
+	#sidebar-home {
+		display: none;
+	}
+	
+	.home #featured-categories > div {
+		width: 100%;
+		float: none;
+		border-right: none;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+}
+
+@media screen and (max-width: 1320px) {
+	.home .entry-summary {
+		float: none;
+	}
+}
