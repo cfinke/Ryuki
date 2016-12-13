@@ -33,6 +33,7 @@ get_header();
 				
 				$args = array(
 					'posts_per_page' => 1,
+					'paged' => max( get_query_var( 'page' ), 1 ),
 				);
 
 				$the_query = new WP_Query( $args );
