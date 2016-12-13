@@ -10,121 +10,109 @@
  Text Domain:  ryuki
 */
 
+/* Make the homepage content holder as big as its children. */
+#ryuki-content {
+	overflow:hidden;
+	width: 100%;
+}
+
+.homepage-post {
+	float: left;
+	width: 66%;
+	padding: 10px 35px 35px;
+	box-sizing: border-box;
+	/* Overlay the border between the post and the sidebar so it extends the full length no matter which one is longer. */
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	margin-left: -1px;
+}
+
+/* Hide the site title and description on the homepage, since it's in the sidebar. */
 body.home #masthead hgroup {
 	display: none;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
+/* Inch the content up on the homepage; there's a big gap. */
 body.home #masthead {
 	border-bottom: none;
 	margin-bottom: -20px;
 }
 
+/* Float the homepage sidebar next to the post teaser. */
 #sidebar-home {
-	margin-left: 35px;
+	width: 33%;
 	float: left;
-	position: relative;
+	box-sizing: border-box;
+	padding-left: 35px;
 }
 
-#sidebar-home:after {
-	content: " ";
-	visibility: hidden;
-	clear: both;
-	font-size: 0;
-	height: 0;
-	display: block;
+/* The sidebar and the featured categories are displayed similarly -- 1/3 width and floated left. */
+#ryuki-featured-categories > div, #sidebar-home {
+	width: 33%;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px 35px 35px;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#sidebar-home {
-	width: 290px;
-}
-
-#sidebar-home * {
+/* The Ryu widget areas all have a dark background, so their text is set to white. Doesn't work for our homepage sidebar widget area. */
+#sidebar-home a, #sidebar-home p, #sidebar-home h1 {
 	color: #000;
 }
 
-#sidebar-home .site-description {
-	line-height: 1.5;
-}
-
-.entry-meta.widget-area {
-	text-transform: none;
-}
-
-#sidebar-home .widget {
-	margin-bottom: 0;
-}
-
-#sidebar-home .widget input {
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	color: rgb(0, 0, 0, .1);
-}
-
+/* Keep the submit button styles. */
 #sidebar-home .widget input[type="submit"] {
-	color: #fff;
+	border: solid #000 2px;
 }
 
 #sidebar-home .widget input[type="submit"]:hover {
 	color: #000;
+	background-color: #fff;
 }
 
-
-.entry-meta.widget-area aside, #sidebar-home .widget-title {
+#sidebar-home aside, #sidebar-home .widget-title {
 	text-transform: uppercase;
-	font-weight: 700;
+	font: 700 16px Lato, sans-serif;
+	letter-spacing: 0.1em;
 }
 
-.entry-meta .site-title, .entry-meta .site-description {
-	text-align: left;
+#sidebar-home .widget-title {
+	margin-bottom: 12px;
+}
+
+#sidebar-home p {
+	margin-bottom: 12px;
+	text-transform: none;
+	font-weight: 400;
 }
 
 #sidebar-home hgroup, #sidebar-home aside {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	display: block;
-	padding: 8px 0;
+	padding: 12px 0;
 }
 
 #sidebar-home aside:last-child {
 	border-bottom: none;
+	padding-bottom: 0;
 }
 
-.homepage-post * {
-	clear: none;
+.home .homepage-post .hentry {
+	padding: 0 0 0 0 !important;
+	border-bottom: none;
 }
 
-.homepage-post .hentry {
-	padding: 35px 0 0;
-}
-
-.homepage-post .entry-summary {
-	max-width: 896px;
-}
-
-.homepage-post .entry-summary {
-	margin-top: 16px;
-}
-
-.home #featured-categories {
+#ryuki-featured-categories {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.home #featured-categories > div {
-	width: 33%;
-	float: left;
-	box-sizing: border-box;
-	padding: 10px 35px 35px;
-}
-
-.home #featured-categories > div {
-	border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.home #featured-categories > div:last-child {
+#ryuki-featured-categories > div:last-child {
 	border-right: none;
 }
 
-.home #featured-categories:after {
+#ryuki-featured-categories:after {
 	content: " ";
 	visibility: hidden;
 	clear: both;
@@ -133,18 +121,19 @@ body.home #masthead {
 	display: block;
 }
 
-#featured-categories span.category-name {
+#ryuki-featured-categories span.category-name {
 	display: inline-block;
 	background-color: #000;
 	text-transform: uppercase;
 	font: 700 12px/1 Lato, sans-serif;
 	letter-spacing: 0.1em;
 	padding: 10px 22px;
+	margin-bottom: 16px;
 	position: relative;
 	top: -15px;
 }
 
-#featured-categories span.category-name a {
+#ryuki-featured-categories span.category-name a {
 	color: #fff;
 }
 
@@ -157,20 +146,24 @@ body.home #masthead {
 	display: block;
 }
 
-.featured-on-homepage.hentry {
-	padding: 0 0 10px;
+.home .featured-on-homepage.hentry {
+	padding: 0 0 16px 0;
+	margin: 0 0 0 0;
 	border-bottom: none;
+	min-height: 70px;
+	
 }
 
-.featured-on-homepage.hentry:last-child {
+.home .featured-on-homepage.hentry:last-child {
 	padding-bottom: 0;
 }
 
-.featured-on-homepage a {
+.home .featured-on-homepage a {
 	text-decoration: underline;
+	font-size: 18px;
 }
 
-.featured-on-homepage img {
+.home .featured-on-homepage img {
 	max-height: 70px;
 	max-width: 120px;
 	height: auto;
@@ -179,25 +172,44 @@ body.home #masthead {
 	margin-right: 10px;
 }
 
+.ryuki-entry-title {
+	font: italic 700 68px/1 "Playfair Display", serif;
+}
+
+.ryuki-entry-summary a {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.ryuki-entry-summary p {
+	margin-bottom: 16px;
+}
+
+.ryuki-entry-summary p:last-child {
+	margin-bottom: 0;
+}
+
 @media screen and (max-width: 600px) {
+	/* Show the title at the top again. */
 	body.home #masthead hgroup {
 		display: block;
 	}
 	
+	/* Hide the homepage sidebar. */
 	#sidebar-home {
 		display: none;
 	}
 	
-	.home #featured-categories > div {
+	/* Make the featured content divs just regular sections, not side-by-side. */
+	.home #ryuki-featured-categories > div {
 		width: 100%;
 		float: none;
 		border-right: none;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	}
-}
-
-@media screen and (max-width: 1320px) {
-	.home .entry-summary {
+	
+	/* Make the post content full-width. */
+	.homepage-post {
 		float: none;
+		width: 100%;
 	}
 }

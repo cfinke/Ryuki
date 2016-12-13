@@ -20,3 +20,36 @@ function ryuki_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'ryuki_widgets_init' );
+
+add_action( 'customize_register','ryuki_customize_register' );
+
+function ryuki_customize_register( $wp_customize ) {
+	$wp_customize->add_section( 'ryuki_featured_categories', array(
+		'title' => __( 'Featured Categories', 'ryuki' ),
+		'description' => __( 'Select the categories to feature on the homepage', 'ryuki' ),
+		'capability' => 'edit_theme_options',
+	) );
+	
+	$categories = get_categories();
+	$choices = array( '0' => __( 'Recent Posts (Default)', 'ryuki' ) );
+
+	foreach ( $categories as $category ) {
+		$choices[ $category->term_id ] = $category->name;
+	}
+
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$wp_customize->add_setting( 'ryuki_featured_category_' . $i, array(
+			'type' => 'theme_mod',
+			'capability' => 'edit_theme_options',
+			'transport' => 'refresh',
+		) );
+	
+		$wp_customize->add_control( 'ryuki_featured_category_' . $i, array(
+			'type' => 'select',
+			'section' => 'ryuki_featured_categories',
+			'label' => sprintf( __( 'Category #%s', 'ryuki' ), $i ),
+			'active_callback' => 'is_front_page',
+			'choices' => $choices,
+		) );
+	}
+}
