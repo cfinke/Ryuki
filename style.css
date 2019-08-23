@@ -188,7 +188,7 @@ body.home #masthead {
 }
 
 .ryuki-entry-title {
-	font: italic 700 68px/1 "Playfair Display", serif;
+	font: italic 700 40px/1 "Playfair Display", serif;
 }
 
 .ryuki-entry-summary a {
@@ -201,6 +201,14 @@ body.home #masthead {
 
 .ryuki-entry-summary p:last-child {
 	margin-bottom: 0;
+}
+
+#nav-below {
+	border-bottom: none;
+}
+
+.entry-title {
+	max-width: none;
 }
 
 @media screen and (max-width: 600px) {
