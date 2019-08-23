@@ -22,5 +22,6 @@
 		<?php endif; ?>
 
 		<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' ); ?>
+		<span class="published-date"><?php the_date( 'F j, Y' ); ?></span>
 	</div><!-- .entry-wrap -->
 </article><!-- #post-## -->
