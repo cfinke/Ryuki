@@ -58,9 +58,14 @@
 					'link_after'  => '</span>',
 				) );
 			?>
+
+			<div id="after-content-widgets">
+				<?php dynamic_sidebar( 'after-content-widgets' ); ?>
+			</div>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 
 		<span class="entry-format-badge theme-genericon"><span class="screen-reader-text"><?php _e( 'Standard', 'ryu' ); ?></span></span>
+		
 	</div><!-- .entry-wrap -->
 </article><!-- #post-## -->
