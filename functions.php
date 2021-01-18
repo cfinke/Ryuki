@@ -53,3 +53,17 @@ function ryuki_customize_register( $wp_customize ) {
 		) );
 	}
 }
+
+function ryuki_setup() {
+	/**
+	 * Enable support for Post Thumbnails
+	 */
+	add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * Adding several sizes for Post Thumbnails
+	 */
+	add_image_size( 'ryuki-featured-thumbnail', 500, 0 );
+}
+
+add_action( 'after_setup_theme', 'ryuki_setup' );

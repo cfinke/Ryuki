@@ -213,6 +213,12 @@ body.home #masthead {
 	max-width: none;
 }
 
+.attachment-ryuki-featured-thumbnail {
+	max-width: 100%;
+	vertical-align: middle;
+	height: auto;
+}
+
 @media screen and (max-width: 600px) {
 	/* Show the title at the top again. */
 	body.home #masthead hgroup {
