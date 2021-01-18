@@ -219,6 +219,20 @@ body.home #masthead {
 	height: auto;
 }
 
+#after-content-widgets {
+	padding-top: 10px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#after-content-widgets .widget-title {
+	color: #000;
+}
+
+.home .ryuki-featured-categories {
+	margin-top: 10px;
+	border-top: 0;
+}
+
 @media screen and (max-width: 600px) {
 	/* Show the title at the top again. */
 	body.home #masthead hgroup {
