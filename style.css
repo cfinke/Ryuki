@@ -188,7 +188,9 @@ body.home #masthead {
 }
 
 .ryuki-entry-title {
-	font: italic 700 40px/1 "Playfair Display", serif;
+	font-family: Lora, "Playfair Display", serif;
+	font-weight: bold;
+	font-size: 40px;
 }
 
 .ryuki-entry-summary a {
