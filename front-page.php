@@ -26,11 +26,45 @@ get_header();
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</hgroup>
 				<?php dynamic_sidebar( 'sidebar-home' ); ?>
+				<div class="ryuki-featured-categories">
+					<div>
+						<span class="category-name">
+							<a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>"><?php echo esc_html__( 'Recent Posts', 'ryuki' ); ?></a>
+						</span>
+						<?php
+
+						$args = array(
+							'posts_per_page' => 6,
+							'offset' => 1,
+							'post__not_in' => $exclude_posts,
+						);
+
+						$the_query = new WP_Query( $args );
+
+						// The Loop
+						if ( $the_query->have_posts() ) {
+							while ( $the_query->have_posts() ) {
+								$the_query->the_post();
+
+								$exclude_posts[] = $post->ID;
+
+								get_template_part( 'featured-on-homepage' );
+							}
+						}
+
+						?>
+					</div>
+				</div>
 			</div>
 
 			<div class="homepage-post" role="main">
+				<span class="latest-header">
+					<a>
+						<?php echo esc_html__( 'The Latest', 'ryuki' ); ?>
+					</a>
+				</span>
 				<?php
-				
+
 				$args = array(
 					'posts_per_page' => 1,
 					'paged' => max( get_query_var( 'page' ), 1 ),
@@ -42,21 +76,21 @@ get_header();
 				if ( $the_query->have_posts() ) {
 					while ( $the_query->have_posts() ) {
 						$the_query->the_post();
-						
+
 						$exclude_posts[] = $post->ID;
-					
+
 						get_template_part( 'teaser', get_post_format() );
 					}
 				}
 				else {
 					get_template_part( 'no-results', 'index' );
 				}
-				
+
 				?>
 			</div>
 		</div><!-- #content -->
 		<?php
-		
+
 		$featured_category_ids = array(
 			get_theme_mod( 'ryuki_featured_category_1' ),
 			get_theme_mod( 'ryuki_featured_category_2' ),
@@ -67,7 +101,7 @@ get_header();
 			?>
 			<div id="ryuki-featured-categories">
 				<?php
-			
+
 				foreach ( $featured_category_ids as $featured_category_id ) {
 					?>
 					<div>
@@ -85,16 +119,16 @@ get_header();
 								<a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>"><?php echo esc_html__( 'Recent Posts', 'ryuki' ); ?></a>
 								<?php
 							}
-				
+
 							?>
 						</span>
 						<?php
-					
+
 						$args = array(
 							'posts_per_page' => 3,
 							'post__not_in' => $exclude_posts,
 						);
-						
+
 						if ( $featured_category_id ) {
 							$args['cat'] = $featured_category_id;
 						}
@@ -105,13 +139,13 @@ get_header();
 						if ( $the_query->have_posts() ) {
 							while ( $the_query->have_posts() ) {
 								$the_query->the_post();
-							
+
 								$exclude_posts[] = $post->ID;
-							
+
 								get_template_part( 'featured-on-homepage' );
 							}
 						}
-					
+
 						?>
 					</div>
 				<?php } ?>

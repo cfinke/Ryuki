@@ -103,12 +103,12 @@ body.home #masthead {
 	border-bottom: none;
 }
 
-.home #ryuki-featured-categories {
+.home #ryuki-featured-categories, .home .ryuki-featured-categories {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#ryuki-featured-categories > div:last-child {
+#ryuki-featured-categories > div:last-child, .ryuki-featured-categories > div:last-child {
 	border-right: none;
 }
 
@@ -121,7 +121,7 @@ body.home #masthead {
 	display: block;
 }
 
-#ryuki-featured-categories span.category-name {
+#ryuki-featured-categories span.category-name, .ryuki-featured-categories span.category-name, .latest-header {
 	display: inline-block;
 	background-color: #000;
 	text-transform: uppercase;
@@ -133,7 +133,7 @@ body.home #masthead {
 	top: -15px;
 }
 
-#ryuki-featured-categories span.category-name a {
+#ryuki-featured-categories span.category-name a, #sidebar-home .ryuki-featured-categories span.category-name > a, .latest-header a {
 	color: #fff;
 }
 
