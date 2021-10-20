@@ -4,7 +4,7 @@
  Author:       Christopher Finke
  Author URI:   https://www.chrisfinke.com/
  Template:     ryu
- Version:      1.0.1
+ Version:      1.0.2
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  ryuki
@@ -33,11 +33,6 @@ body.home #masthead hgroup {
 	margin-bottom: 10px;
 }
 
-/* Inch the content up on the homepage; there's a big gap. */
-body.home #masthead {
-	border-bottom: none;
-	margin-bottom: -20px;
-}
 
 /* Float the homepage sidebar next to the post teaser. */
 #sidebar-home {
@@ -241,10 +236,37 @@ body.home #masthead {
 	font-size: 12pt;
 }
 
-@media screen and (max-width: 600px) {
+.site-description {
+	line-height: 24px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#masthead .site-title a {
+	text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+	/* Inch the content up on the homepage; there's a big gap. */
+	body.home #masthead {
+		border-bottom: none;
+		margin-bottom: -20px;
+	}
+	
+	#masthead hgroup {
+		margin-top: -30px;
+	}
+	
+	body.page-template-default #masthead {
+		height: 117px;
+	}
+}
+
+@media screen and (max-width: 599px) {
 	/* Show the title at the top again. */
 	body.home #masthead hgroup {
 		display: block;
+		margin-bottom: 30px;
 	}
 	
 	/* Hide the homepage sidebar. */
